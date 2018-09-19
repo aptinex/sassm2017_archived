@@ -1,0 +1,39 @@
+$(document).ready(function(){
+
+  $('.dload').addClass('op0').viewportChecker({
+      classToAdd: 'op1 animated fadeIn',
+      classToRemove: 'op0',
+      offset : "30%"
+  });
+
+
+  $('[data-countdown]').each(function() {
+   var $this = $(this), finalDate = $(this).data('countdown'), strFormat = $(this).data('countdown-format') ;
+   $this.countdown(finalDate, function(event) {
+     $this.html(event.strftime(strFormat));
+   });
+  });
+
+  jQuery('.dload_s').addClass("op0").viewportChecker();
+
+  $('#flag-carousel').owlCarousel({
+      loop:true,
+      center: true,
+      margin:5,
+      autoplay:true,
+      autoplayTimeout:2000,
+      autoplayHoverPause:true,
+      responsive:{
+          0:{
+              items:6
+          },
+          600:{
+              items:6
+          },
+          1000:{
+              items:6
+          }
+      }
+  });
+
+});
